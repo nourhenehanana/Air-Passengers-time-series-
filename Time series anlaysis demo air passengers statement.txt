@@ -1,0 +1,72 @@
+we are given a dataset which consists of monthly totals of international airline passengers betwee to n . 
+The objective of this analysis and modeling is to review time series theory.
+We will be following an ARIMA procedure of the airpassengers dataset as follows: 
+1/ perform exploratory data analysis 
+2/ Decomposition of data 
+3/test the stationarity
+
+what is a dicky fuller test
+The Dickey-Fuller test (DF test) is a statistical test used to determine whether a time series data set is stationary or non-stationary. In a stationary time series, the statistical properties (such as mean, variance, and covariance) remain constant over time, whereas in a non-stationary time series, these properties change over time.
+
+The DF test is based on a regression model that includes the lagged values of the dependent variable and a time trend. The null hypothesis of the DF test is that the time series data set has a unit root, which implies that it is non-stationary. The alternative hypothesis is that the time series data set is stationary.
+
+If the calculated test statistic is less than the critical value, the null hypothesis is rejected, and the time series data set is considered stationary. On the other hand, if the calculated test statistic is greater than the critical value, the null hypothesis is not rejected, and the time series data set is considered non-stationary.
+
+The Dickey-Fuller test is widely used in economics and finance to test the stationarity of financial and economic time series data, such as stock prices, exchange rates, and macroeconomic variables.
+
+
+to do time series analysis we need to have time seires data set non stationary ? 
+No, we do not necessarily need to have a non-stationary time series data set to perform time series analysis. In fact, stationary time series data sets are usually preferred for time series analysis because they have consistent statistical properties over time, which simplifies the modeling process and makes it easier to make accurate predictions.
+
+However, in some cases, non-stationary time series data sets may be more appropriate for analysis, particularly when the goal is to model and analyze trends or changes in a variable over time. Non-stationary time series data sets can be transformed into stationary data sets through techniques such as differencing or detrending, which removes trends or seasonal patterns in the data.
+
+It is important to note that the choice of whether to use a stationary or non-stationary time series data set depends on the specific research question and the nature of the data. In practice, it is often useful to test for stationarity using statistical tests such as the Dickey-Fuller test before proceeding with time series analysis.
+
+what are the rolling statistics? 
+Rolling statistics refer to the calculation of statistical measures such as mean, standard deviation, or correlation over a moving window of observations in a time series. In other words, instead of calculating the statistical measures over the entire time series data set, rolling statistics are calculated for a fixed number of observations at a time and then shifted to the next set of observations.
+
+For example, if we have a time series data set with 100 observations and we want to calculate the rolling mean over a window of 10 observations, we would first calculate the mean of the first 10 observations, then move the window by one observation and calculate the mean of the next 10 observations, and so on until we have calculated the mean for all possible windows.
+
+Rolling statistics can provide useful insights into the behavior of a time series over time, especially in detecting trends, changes in variability, or seasonality. They can also be used to smooth out the noise or short-term fluctuations in a time series, making it easier to identify long-term patterns and trends.
+
+Rolling statistics are commonly used in financial and economic analysis to study stock prices, exchange rates, and other time series data. They can be easily computed using software packages such as Python's pandas library or R's zoo package.
+
+Nourhene Hanana
+what is the difference between seasonal, trend, cycle and irregular?
+
+Seasonal, trend, cycle, and irregular are the four components of a time series that are commonly used to model and analyze time series data.
+
+Seasonal Component: The seasonal component of a time series represents the regular, repeating pattern or seasonality that occurs within a fixed period of time, such as days, weeks, or months. Seasonal patterns can be due to factors such as weather, holidays, or business cycles, and they often exhibit a fixed frequency and amplitude.
+
+Trend Component: The trend component of a time series represents the long-term behavior or direction of the series over time. Trends can be upward, downward, or stable and can be linear or nonlinear. Trends can be due to factors such as economic growth, population growth, or technological advances.
+
+Cycle Component: The cycle component of a time series represents the cyclical patterns or fluctuations that occur over a time period longer than the seasonal component. Cycles can be due to factors such as business cycles or political cycles, and they often exhibit a longer period and larger amplitude than the seasonal component.
+
+Irregular Component: The irregular component of a time series represents the unpredictable or random fluctuations in the series that cannot be explained by the other three components. Irregular components can be due to factors such as natural disasters, political crises, or other unexpected events.
+
+It is important to identify and model these components separately because each component can have a different impact on the behavior and forecasting of the time series. By decomposing a time series into its components, we can better understand the underlying patterns and relationships in the data and make more accurate predictions for future values.
+
+
+Nourhene Hanana
+what does lag mean? 
+
+In the context of time series analysis, a lag refers to the time interval between two consecutive observations in a time series. More specifically, a lag refers to the number of time periods that separate two observations in a time series.
+
+For example, consider a monthly time series of sales data for a company. If we want to calculate the correlation between sales in one month and sales in the following month, we would use a lag of 1. This means that we are comparing the sales data for two consecutive months. Similarly, if we want to calculate the autocorrelation between sales in January and sales in March, we would use a lag of 2, since there are two months between January and March.
+
+Lags are important in time series analysis because they can provide insights into the patterns and relationships in the data. By analyzing the autocorrelation function (ACF) of a time series at different lags, we can identify whether there is a significant relationship between observations at different points in time. This can help us to identify trends, cycles, or seasonal patterns in the data, and to develop forecasting models that take into account the past behavior of the time series.
+
+
+in time series why do we transform series into LogD decomposition ? 
+Transforming a time series into a log difference (LogD) decomposition can be useful in time series analysis for a few reasons:
+
+Stationarity: One of the key assumptions of many time series models is that the data is stationary, meaning that the statistical properties of the data (such as the mean and variance) remain constant over time. Transforming a non-stationary time series into a LogD series can often make it stationary, by removing trends and seasonal patterns and stabilizing the variance.
+
+Interpretation: Taking the log difference of a time series can make the data more interpretable, particularly when dealing with variables that are measured in different units or have very different scales. For example, taking the log difference of a stock price series can help to normalize the data and make it easier to compare changes in the stock price over time.
+
+Forecasting: Transforming a time series into a LogD series can also make it easier to develop forecasting models, particularly when the data exhibits exponential growth or decay. In a LogD series, the trend component can be modeled as a straight line, which makes it easier to apply linear regression models or other statistical techniques.
+
+Overall, transforming a time series into a LogD series can be a useful tool in time series analysis, particularly when dealing with non-stationary data or when trying to interpret or forecast the data. However, it is important to carefully consider the specific characteristics of the data and the goals of the analysis before deciding to use a LogD transformation or any other technique.
+
+
+

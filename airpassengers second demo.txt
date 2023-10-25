@@ -1,0 +1,9 @@
+in this demo we will be using the Air passengers dataset to: 
+1/ fit model using an Arima algorithm(autoregressive integrated moving average) that handles even non stationary time series by turning it into stationary data using the integrated component. 
+2/ Calculate forecasts
+
+Forecasting time series: we made in the previous demo the time series stationary. Now we will make models on the time series. We use statistical modeling method called ARIMA to forecast the data where there are dependencies in the values. 
+to find out the p and q values for the model we will use ACF and PACF plots. 
+
+#why we should convert to log scale? 
+Logarithmic scales are useful when the data you are displaying is much less or much more than the rest of the data or when the percentage differences between values are important. You can specify whether to use a logarithmic scale, if the values in the chart cover a very large range.

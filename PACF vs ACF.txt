@@ -1,0 +1,34 @@
+ACF vs PACF 
+
+ACF plot shows the autocorrelations. We can calculate the corr(y(t),y(t-1)) btween curent and previous lag or with all previous lag then we can plot all these correlation coefficients on the corrallogram and by watching the correlation we can define which one of them is statistically significant means that the p-value is less than 0.05 and we can reject the null hypothesis (there is no relation between variables) ||  y(k)=corr(y(t),y(t-k)) which is the correlation between yt and the kth lag. 
+
+Statistically significant: 
+what does statistically significant mean? 
+Statistical significance refers to the likelihood that the results of a statistical analysis are not due to chance. In other words, it is a measure of whether the results of a study or experiment are reliable and can be generalized to the population being studied.
+
+When a statistical test is conducted, the p-value is used to determine whether the results are statistically significant. The p-value is the probability of obtaining the observed results or more extreme results, assuming that the null hypothesis is true. If the p-value is less than a predetermined significance level (usually 0.05), the results are considered statistically significant, which means that the null hypothesis is rejected and the alternative hypothesis is accepted.
+
+For example, if a medical study compared a new drug with a placebo and found that the difference in effectiveness between the two groups was statistically significant, this means that there is a low probability that the difference was due to chance. Therefore, we can be confident that the new drug is more effective than the placebo.
+
+It is important to note that statistical significance does not necessarily mean practical significance or real-world importance. Therefore, it is important to interpret the results of a study or experiment in the context of its practical relevance and limitations.
+
+partial correlation function: the problem with autocorrlation function is that when we calculate the correlation between y(t) and y(t-2) we know that there is something between these 2 values. That is y(t) is not only correlated with y(t-2) directly but it also has an idirect effect on y(t) through y(t-1) 
+=> here we can judge that y(t) is affecting y(t-2) throughits correlation y(t-1)
+
+To overcome this problem we will remove y(t-1) and calculate the correlation between y(t) and y(t-2) and we remove the indirect correlation that y(t) has with y(t-2) through y(t-1)
+we calculate the correlation between current and previous lag by remvoing the inbetween correlation  
+We can plot this into a pacf plot. 
+
+
+
+what is the difference between arma and arima models ? 
+
+ARMA (AutoRegressive Moving Average) and ARIMA (AutoRegressive Integrated Moving Average) models are both widely used in time series analysis and forecasting.
+
+The main difference between ARMA and ARIMA models is that ARIMA models incorporate differencing to make the series stationary, which is a key assumption in ARMA models. Specifically, ARIMA models include an integrated component (I), which involves taking differences of the time series until it becomes stationary. The integrated component in ARIMA models enables them to handle non-stationary time series data, whereas ARMA models are only suitable for stationary time series.
+
+In other words, ARMA models assume that the time series is already stationary and focuses on modeling the auto-regressive and moving average components, whereas ARIMA models first transform the data to achieve stationarity and then model the ARMA components.
+
+Additionally, ARIMA models often include a seasonal component (S) to account for seasonality in the data, resulting in SARIMA (Seasonal ARIMA) models. SARIMA models incorporate seasonal differences to make the series stationary, similar to how non-seasonal differences are incorporated in ARIMA models.
+
+In summary, while both ARMA and ARIMA models are used in time series analysis and forecasting, ARIMA models are more flexible and suitable for non-stationary time series data because of their integrated component, while ARMA models assume stationarity and do not include the integrated component. ARIMA models can also include a seasonal component to account for seasonality in the data, resulting in SARIMA models.
